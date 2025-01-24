@@ -2,6 +2,7 @@
     --primary-color: rgb(42, 183, 230);
     --secondary-color: rgb(144, 192, 243);
     --split-color: rgba(19, 64, 241, 0.05);
+    --shadow-color: rgb(42, 183, 230,0.2);
     --text-color: rgb(0, 0, 0);
     --sub-color: rgba(0, 0, 0, 0.3);
     --tag-color: rgba(42, 183, 230, 0.1);
@@ -81,9 +82,9 @@ body {
 }
 
 .navlink:hover {
-    color: var(--withe-color);
-    background-color: var(--primary-color);
+    opacity: 0.5;
 }
+
 
 .brand{
     margin-top: 80px;
@@ -225,7 +226,7 @@ h2 {
 }
 
 .navigate-btn:hover {
-    padding: 8px 16px;
+    box-shadow: 0px 4px 20px var(--shadow-color);
 }
 
 .footer {
