@@ -1,160 +1,190 @@
 // 读取activity.json文件并生成卡片展示
-fetch('data/activity.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('activity-container');
-        data.content.forEach(activity => {
-            const card = document.createElement('div');
-            card.className = 'card activity-card'; // 添加额外的类
-            card.dataset.tags = activity.tags.join(' ');
-            card.dataset.district = activity.district;
-            card.innerHTML = `
-                <h2>${activity.title}</h2>
-                <p class="Detail"><strong class="smalltit">日期:</strong> ${activity.date}${activity.enddate ? ' - ' + activity.enddate : ''}<span class="time">${activity.times.join(', ')}</span></p>
-                <p class="Detail"><strong>团队:</strong> ${Array.isArray(activity.team) ? activity.team.join(', ') : activity.team}</p>                
-                <p class="Detail"><strong>描述:</strong> ${activity.description || '无'}</p>
-                <p class="Detail"><strong>文化意义:</strong> ${activity.culturalMeaning || '无'}</p>
-                <div class="tags-container">${activity.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-                <div class="split"></div>
-                <div class="gomap">
-                    <p class="Detail"><strong>地点:</strong> ${activity.location}</p>
-                    <button class="navigate-btn" onclick="navigateTo('${activity.location}')">🚗 导航</button>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+if (document.getElementById('activity-container')) {
+    fetch('data/activity.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('activity-container');
+            const totalCount = data.content.length;
+            const countDisplay = document.getElementById('activity-count');
+            countDisplay.innerText = `${totalCount}/${totalCount}`;
 
-        // 筛选功能
-        function filterActivities() {
-            const tagFilter = document.getElementById('tag-filter').value;
-            const districtFilter = document.getElementById('district-filter').value;
-            const cards = document.querySelectorAll('.activity-card');
-
-            cards.forEach(card => {
-                const tags = card.dataset.tags.split(' ');
-                const district = card.dataset.district;
-                const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
-                const matchesDistrict = districtFilter === 'all' || district === districtFilter;
-
-                if (matchesTag && matchesDistrict) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+            data.content.forEach(activity => {
+                const card = document.createElement('div');
+                card.className = 'card activity-card'; // 添加额外的类
+                card.dataset.tags = activity.tags.join(' ');
+                card.dataset.district = activity.district;
+                card.innerHTML = `
+                    <h2>${activity.title}</h2>
+                    <p class="Detail"><strong class="smalltit">日期:</strong> ${activity.date}${activity.enddate ? ' - ' + activity.enddate : ''}<span class="time">${activity.times.join(', ')}</span></p>
+                    <p class="Detail"><strong>团队:</strong> ${Array.isArray(activity.team) ? activity.team.join(', ') : activity.team}</p>                
+                    <p class="Detail"><strong>描述:</strong> ${activity.description || '无'}</p>
+                    <p class="Detail"><strong>文化意义:</strong> ${activity.culturalMeaning || '无'}</p>
+                    <div class="tags-container">${activity.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                    <div class="split"></div>
+                    <div class="gomap">
+                        <p class="Detail"><strong>地点:</strong> ${activity.location}</p>
+                        <button class="navigate-btn" onclick="navigateTo('${activity.location}')">🚗 导航</button>
+                    </div>
+                `;
+                container.appendChild(card);
             });
-        }
 
-        document.getElementById('tag-filter').addEventListener('change', filterActivities);
-        document.getElementById('district-filter').addEventListener('change', filterActivities);
-    })
-    .catch(error => console.error('Error loading activity data:', error));
+            // 筛选功能
+            function filterActivities() {
+                const tagFilter = document.getElementById('tag-filter').value;
+                const districtFilter = document.getElementById('district-filter').value;
+                const cards = document.querySelectorAll('.activity-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const tags = card.dataset.tags.split(' ');
+                    const district = card.dataset.district;
+                    const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
+                    const matchesDistrict = districtFilter === 'all' || district === districtFilter;
+
+                    if (matchesTag && matchesDistrict) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                countDisplay.innerText = `${totalCount}/${visibleCount}`;
+            }
+
+            document.getElementById('tag-filter').addEventListener('change', filterActivities);
+            document.getElementById('district-filter').addEventListener('change', filterActivities);
+        })
+        .catch(error => console.error('Error loading activity data:', error));
+}
 
 // 读取food.json文件并生成卡片展示
-fetch('data/food.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('food-container');
-        data.content.forEach(food => {
-            const card = document.createElement('div');
-            card.className = 'card food-card'; // 添加额外的类
-            card.dataset.tags = food.tags.join(' ');
-            card.dataset.district = food.district;
-            card.innerHTML = `
-                <h2>${food.title}</h2>
-                <p class="Detail"><strong class="smalltit">类型:</strong> ${food.type}</p>
-                <p class="Detail"><strong>营业时间:</strong> ${food.businessHours}</p>
-                <p class="Detail"><strong>价格:</strong> ${food.price}</p>
-                <p class="Detail"><strong>特色:</strong> ${food.specialties.join(', ')}</p>
-                <p class="Detail"><strong>描述:</strong> ${food.description || '无'}</p>
-                <p class="Detail"><strong>优势:</strong> ${food.advantages || '无'}</p>
-                <div class="tags-container">${food.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-                <div class="split"></div>
-                <div class="gomap">
-                    <p class="Detail"><strong>地点:</strong> ${food.location}</p>
-                    <button class="navigate-btn" onclick="navigateTo('${food.location}')">🚗 导航</button>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+if (document.getElementById('food-container')) {
+    fetch('data/food.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('food-container');
+            const totalCount = data.content.length;
+            const countDisplay = document.getElementById('food-count');
+            countDisplay.innerText = `${totalCount}/${totalCount}`;
 
-        // 筛选功能
-        function filterFoods() {
-            const tagFilter = document.getElementById('tag-filter').value;
-            const districtFilter = document.getElementById('district-filter').value;
-            const cards = document.querySelectorAll('.food-card');
-
-            cards.forEach(card => {
-                const tags = card.dataset.tags.split(' ');
-                const district = card.dataset.district;
-                const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
-                const matchesDistrict = districtFilter === 'all' || district === districtFilter;
-
-                if (matchesTag && matchesDistrict) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+            data.content.forEach(food => {
+                const card = document.createElement('div');
+                card.className = 'card food-card'; // 添加额外的类
+                card.dataset.tags = food.tags.join(' ');
+                card.dataset.district = food.district;
+                card.innerHTML = `
+                    <h2>${food.title}</h2>
+                    <p class="Detail"><strong class="smalltit">类型:</strong> ${food.type}</p>
+                    <p class="Detail"><strong>营业时间:</strong> ${food.businessHours}</p>
+                    <p class="Detail"><strong>价格:</strong> ${food.price}</p>
+                    <p class="Detail"><strong>特色:</strong> ${food.specialties.join(', ')}</p>
+                    <p class="Detail"><strong>描述:</strong> ${food.description || '无'}</p>
+                    <p class="Detail"><strong>优势:</strong> ${food.advantages || '无'}</p>
+                    <div class="tags-container">${food.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                    <div class="split"></div>
+                    <div class="gomap">
+                        <p class="Detail"><strong>地点:</strong> ${food.location}</p>
+                        <button class="navigate-btn" onclick="navigateTo('${food.location}')">🚗 导航</button>
+                    </div>
+                `;
+                container.appendChild(card);
             });
-        }
 
-        document.getElementById('tag-filter').addEventListener('change', filterFoods);
-        document.getElementById('district-filter').addEventListener('change', filterFoods);
-    })
-    .catch(error => console.error('Error loading food data:', error));
+            // 筛选功能
+            function filterFoods() {
+                const tagFilter = document.getElementById('tag-filter').value;
+                const districtFilter = document.getElementById('district-filter').value;
+                const cards = document.querySelectorAll('.food-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const tags = card.dataset.tags.split(' ');
+                    const district = card.dataset.district;
+                    const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
+                    const matchesDistrict = districtFilter === 'all' || district === districtFilter;
+
+                    if (matchesTag && matchesDistrict) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                countDisplay.innerText = `${totalCount}/${visibleCount}`;
+            }
+
+            document.getElementById('tag-filter').addEventListener('change', filterFoods);
+            document.getElementById('district-filter').addEventListener('change', filterFoods);
+        })
+        .catch(error => console.error('Error loading food data:', error));
+}
 
 // 读取parking.json文件并生成卡片展示
-fetch('data/parking.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('parking-container');
-        data.content.forEach(parking => {
-            const card = document.createElement('div');
-            card.className = 'card parking-card'; // 修改类名为 parking-card
-            card.dataset.tags = parking.tags.join(' ');
-            card.dataset.district = parking.district;
-            card.innerHTML = `
-                <h2>${parking.title}</h2>
-                <p class="Detail"><strong>位置:</strong> ${parking.location}</p>
-                <p class="Detail"><strong>地区:</strong> ${parking.district}</p>
-                <p class="Detail"><strong>容量:</strong> ${parking.capacity}</p>
-                <p class="Detail"><strong>类型:</strong> ${parking.type}</p>
-                <p class="Detail"><strong>标签:</strong> ${parking.tags.join(', ')}</p>
-                <p class="Detail"><strong>优势:</strong> ${parking.advantages}</p>
-                <p class="Detail"><strong>描述:</strong> ${parking.description}</p>
-                <div class="tags-container">${parking.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-                <div class="split"></div>
-                <div class="gomap">
-                    <p class="Detail"><strong>地点:</strong> ${parking.location}</p>
-                    <button class="navigate-btn" onclick="navigateTo('${parking.location}')">🚗 导航</button>
-                </div>
-            `;
-            container.appendChild(card);
-        });
+if (document.getElementById('parking-container')) {
+    fetch('data/parking.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('parking-container');
+            const totalCount = data.content.length;
+            const countDisplay = document.getElementById('parking-count');
+            countDisplay.innerText = `${totalCount}/${totalCount}`;
 
-        // 筛选功能
-        function filterParkings() {
-            const tagFilter = document.getElementById('tag-filter').value;
-            const districtFilter = document.getElementById('district-filter').value;
-            const cards = document.querySelectorAll('.parking-card');
-
-            cards.forEach(card => {
-                const tags = card.dataset.tags.split(' ');
-                const district = card.dataset.district;
-                const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
-                const matchesDistrict = districtFilter === 'all' || district === districtFilter;
-
-                if (matchesTag && matchesDistrict) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
+            data.content.forEach(parking => {
+                const card = document.createElement('div');
+                card.className = 'card parking-card'; // 修改类名为 parking-card
+                card.dataset.tags = parking.tags.join(' ');
+                card.dataset.district = parking.district;
+                card.innerHTML = `
+                    <h2>${parking.title}</h2>
+                    <p class="Detail"><strong>位置:</strong> ${parking.location}</p>
+                    <p class="Detail"><strong>地区:</strong> ${parking.district}</p>
+                    <p class="Detail"><strong>容量:</strong> ${parking.capacity}</p>
+                    <p class="Detail"><strong>类型:</strong> ${parking.type}</p>
+                    <p class="Detail"><strong>标签:</strong> ${parking.tags.join(', ')}</p>
+                    <p class="Detail"><strong>优势:</strong> ${parking.advantages}</p>
+                    <p class="Detail"><strong>描述:</strong> ${parking.description}</p>
+                    <div class="tags-container">${parking.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                    <div class="split"></div>
+                    <div class="gomap">
+                        <p class="Detail"><strong>地点:</strong> ${parking.location}</p>
+                        <button class="navigate-btn" onclick="navigateTo('${parking.location}')">🚗 导航</button>
+                    </div>
+                `;
+                container.appendChild(card);
             });
-        }
 
-        document.getElementById('tag-filter').addEventListener('change', filterParkings);
-        document.getElementById('district-filter').addEventListener('change', filterParkings);
-    })
-    .catch(error => console.error('Error loading parking data:', error));
+            // 筛选功能
+            function filterParkings() {
+                const tagFilter = document.getElementById('tag-filter').value;
+                const districtFilter = document.getElementById('district-filter').value;
+                const cards = document.querySelectorAll('.parking-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const tags = card.dataset.tags.split(' ');
+                    const district = card.dataset.district;
+                    const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
+                    const matchesDistrict = districtFilter === 'all' || district === districtFilter;
+
+                    if (matchesTag && matchesDistrict) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                countDisplay.innerText = `${totalCount}/${visibleCount}`;
+            }
+
+            document.getElementById('tag-filter').addEventListener('change', filterParkings);
+            document.getElementById('district-filter').addEventListener('change', filterParkings);
+        })
+        .catch(error => console.error('Error loading parking data:', error));
+}
 
 // 导航功能
 function navigateTo(location) {
