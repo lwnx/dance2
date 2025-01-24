@@ -102,6 +102,60 @@ fetch('data/food.json')
     })
     .catch(error => console.error('Error loading food data:', error));
 
+// 读取parking.json文件并生成卡片展示
+fetch('data/parking.json')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('parking-container');
+        data.content.forEach(parking => {
+            const card = document.createElement('div');
+            card.className = 'card parking-card'; // 修改类名为 parking-card
+            card.dataset.tags = parking.tags.join(' ');
+            card.dataset.district = parking.district;
+            card.innerHTML = `
+                <h2>${parking.title}</h2>
+                <p class="Detail"><strong>位置:</strong> ${parking.location}</p>
+                <p class="Detail"><strong>地区:</strong> ${parking.district}</p>
+                <p class="Detail"><strong>容量:</strong> ${parking.capacity}</p>
+                <p class="Detail"><strong>类型:</strong> ${parking.type}</p>
+                <p class="Detail"><strong>标签:</strong> ${parking.tags.join(', ')}</p>
+                <p class="Detail"><strong>优势:</strong> ${parking.advantages}</p>
+                <p class="Detail"><strong>描述:</strong> ${parking.description}</p>
+                <div class="tags-container">${parking.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+                <div class="split"></div>
+                <div class="gomap">
+                    <p class="Detail"><strong>地点:</strong> ${parking.location}</p>
+                    <button class="navigate-btn" onclick="navigateTo('${parking.location}')">🚗 导航</button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        // 筛选功能
+        function filterParkings() {
+            const tagFilter = document.getElementById('tag-filter').value;
+            const districtFilter = document.getElementById('district-filter').value;
+            const cards = document.querySelectorAll('.parking-card');
+
+            cards.forEach(card => {
+                const tags = card.dataset.tags.split(' ');
+                const district = card.dataset.district;
+                const matchesTag = tagFilter === 'all' || tags.includes(tagFilter);
+                const matchesDistrict = districtFilter === 'all' || district === districtFilter;
+
+                if (matchesTag && matchesDistrict) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('tag-filter').addEventListener('change', filterParkings);
+        document.getElementById('district-filter').addEventListener('change', filterParkings);
+    })
+    .catch(error => console.error('Error loading parking data:', error));
+
 // 导航功能
 function navigateTo(location) {
     const encodedLocation = encodeURIComponent(location);
