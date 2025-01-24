@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>潮汕美食</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://emojipedia.org/_next/image?url=https%3A%2F%2Fis.zobj.net%2Fimage-server%2Fv1%2Fimages%3Fr%3DoxXwzXINRmhsniM__u8yKMUDttJ3vbP9ERXqIAfuOAclKY99wIwpyLKw_p022Vm0CRReCcYPzmUllOcpo4LGVFvxzQcHQyv0BT2tKFiRgRN2Z2NeumbXALtvNT75wpyTi4yXheGoeGMJKwvPaWRVkFAT0kM9deDdLDBQxJ5Ae0oa8BSKhMaUjROY184ms7rw0ZRwZSliOJ35tJfze6fx0fLZe9ydUvRUtjWAeQuwekWApcnvFr8-3iMLXi8&w=256&q=75">
+        </div>
+        <div class="navlinks">
+            <a class="navlink" href="index.html">演出</a>
+            <a class="navlink">停车</a>
+            <a class="navlink" href="food.html">美食</a>
+        </div>
+    </nav>
+    <div class="brand">潮汕<span>美食</span></div>
+    <div class="filters">
+        <div>
+            <label for="tag-filter" class="tinytit">筛选标签:</label>
+            <select id="tag-filter">
+                <option value="all">所有标签</option>
+                <option value="美味炸鸡">美味炸鸡</option>
+                <option value="性价比高">性价比高</option>
+                <option value="招牌菜">招牌菜</option>
+                <option value="火爆店铺">火爆店铺</option>
+                <option value="牛肉火锅">牛肉火锅</option>
+                <option value="口感丰富">口感丰富</option>
+                <option value="高性价比">高性价比</option>
+                <option value="生腌">生腌</option>
+                <option value="新鲜海鲜">新鲜海鲜</option>
+                <option value="潮汕风味">潮汕风味</option>
+                <option value="传统潮菜">传统潮菜</option>
+                <option value="非遗菜肴">非遗菜肴</option>
+                <option value="经典美味">经典美味</option>
+                <option value="卤水火锅">卤水火锅</option>
+                <option value="高氛围">高氛围</option>
+                <option value="精选食材">精选食材</option>
+                <option value="潮汕小吃">潮汕小吃</option>
+                <option value="早餐">早餐</option>
+                <option value="地道美味">地道美味</option>
+                <option value="粥">粥</option>
+                <option value="夜宵">夜宵</option>
+                <option value="深夜小聚">深夜小聚</option>
+                <option value="甜品">甜品</option>
+                <option value="潮式豆花">潮式豆花</option>
+                <option value="休闲时光">休闲时光</option>
+                <option value="潮茶">潮茶</option>
+                <option value="特色饮品">特色饮品</option>
+                <option value="解渴">解渴</option>
+                <option value="水果">水果</option>
+                <option value="甘草">甘草</option>
+                <option value="新鲜">新鲜</option>
+                <option value="茶饮">茶饮</option>
+                <option value="清新口感">清新口感</option>
+                <option value="休闲">休闲</option>
+                <option value="牛腩">牛腩</option>
+                <option value="地道美食">地道美食</option>
+                <option value="网红店">网红店</option>
+                <option value="肠粉">肠粉</option>
+                <option value="传统美味">传统美味</option>
+                <option value="炸鸡">炸鸡</option>
+                <option value="小吃">小吃</option>
+                <option value="美味">美味</option>
+                <option value="聚餐">聚餐</option>
+                <option value="烧烤">烧烤</option>
+                <option value="番薯">番薯</option>
+                <option value="芋头">芋头</option>
+                <option value="潮汕特色">潮汕特色</option>
+                <option value="猪头粽">猪头粽</option>
+                <option value="特产">特产</option>
+                <option value="传统小吃">传统小吃</option>
+                <option value="必吃美食">必吃美食</option>
+                <option value="潮汕美食">潮汕美食</option>
+                <option value="小炒">小炒</option>
+                <option value="牛肉">牛肉</option>
+                <option value="下午茶">下午茶</option>
+                <option value="甜汤">甜汤</option>
+                <option value="潮汕甜品">潮汕甜品</option>
+                <option value="鸡翅">鸡翅</option>
+                <option value="炸物">炸物</option>
+                <option value="粿">粿</option>
+                <option value="无米粿">无米粿</option>
+                <option value="豆花草粿">豆花草粿</option>
+                <option value="水粿">水粿</option>
+                <option value="炒粿">炒粿</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="district-filter" class="tinytit right">筛选地区:</label>
+            <select id="district-filter">
+                <option value="all">所有地区</option>
+                <option value="金平区">金平区</option>
+                <option value="龙湖区">龙湖区</option>
+            </select>
+        </div>
+        
+    </div>
+    <div class="conter">
+        <div id="food-container"></div> <!-- 新增的容器 -->
+    </div>
+    <footer class="footer">
+        <h1>🏖️</h1>
+        <p>版权所有 © 2025</p>  
+    </footer >
+    <script src="index.js"></script>
+</body>
+</html>

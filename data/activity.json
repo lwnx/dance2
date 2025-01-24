@@ -1,0 +1,423 @@
+{
+    "title": "示例文档",
+    "content": [
+        {
+            "id": "p011",
+            "title": "中华英歌 舞动潮阳 2025年英歌嘉年华",
+            "date": "2025-02-02",
+            "location": "潮阳区文光塔广场",
+            "district": "潮阳区",
+            "team": ["16支英歌队", "醒狮队", "花篮队"],
+            "times": ["09:00-12:00"],
+            "tags": ["大型汇演", "巡游", "世界非遗", "嘉年华"],
+            "highlight": true,
+            "description": "农历正月初五潮阳非遗文化盛宴，预计比2024年春节汇演更大，将成为春节期间最热闹的民俗活动",
+            "culturalMeaning": "世界版非遗文化展演，展现潮汕传统文化魅力",
+            "additionalInfo": {
+                "venues": ["潮阳区文光塔广场", "潮阳区政府广场"],
+                "activities": ["英歌文化嘉年华集市", "巡游"],
+                "paradeRoute": [
+                    "文光塔",
+                    "中华路",
+                    "潮阳区政府",
+                    "城北一路",
+                    "东山大道",
+                    "亭脚路",
+                    "文光塔广场合影"
+                ],
+                "parkingAdvice": {
+                    "general": "建议提前到达，潮阳城区停车位有限",
+                    "areas": [
+                        {
+                            "location": "北关路一带",
+                            "navigation": "平南社区居委会"
+                        },
+                        {
+                            "location": "南门桥一带",
+                            "navigation": "萧氏始祖祠"
+                        },
+                        {
+                            "location": "亭脚路一带",
+                            "navigation": "文光文昌幼儿园"
+                        },
+                        {
+                            "location": "城南一路一带",
+                            "navigation": "龙井市场"
+                        },
+                        {
+                            "location": "护城河两侧一带",
+                            "navigation": "文光派出所"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "id": "p004",
+            "title": "新春系列英歌舞演出-濠江区",
+            "date": "2025-01-29",
+            "enddate": "2025-02-02",
+            "location": "濠江区中海黄金海岸",
+            "district": "濠江区",
+            "team": "普宁英歌队",
+            "times": ["10:00-12:30", "14:00-16:30"],
+            "tags": ["新春特演"],
+            "highlight": true,
+            "description": "新春五天连续演出",
+            "culturalMeaning": "在滨海新区展现传统英歌舞的魅力"
+        },
+        {
+            "id": "p005",
+            "title": "丹樱生态园新春系列英歌舞演出",
+            "date": "2025-01-29",
+            "enddate": "2025-02-04",
+            "location": "濠江区丹樱生态园",
+            "district": "濠江区",
+            "team": "岗背英歌队",
+            "times": ["9:30-10:30", "12:30-13:30", "14:30-15:30", "16:30-17:30"],
+            "tags": ["新春特演"],
+            "highlight": true,
+            "description": "生态园新春系列演出",
+            "culturalMeaning": "将传统文化与生态旅游相结合"
+        },
+        {
+            "id": "p006",
+            "title": "欢乐世界新春系列英歌舞演出",
+            "date": "2025-01-29",
+            "enddate": "2025-02-11",
+            "location": "金平区广东绿梦欢乐世界",
+            "district": "金平区",
+            "team": "富美英歌队",
+            "times": ["11:00-12:00", "16:00-17:00", "20:00-21:00"],
+            "tags": ["新春特演"],
+            "highlight": true,
+            "description": "欢乐世界新春系列演出",
+            "culturalMeaning": "在现代游乐场景中展现传统文化魅力"
+        },
+        {
+            "id": "p007",
+            "title": "正月初一英歌舞巡演专场",
+            "date": "2025-01-29",
+            "location": "潮阳区文光街道桃园社区",
+            "district": "潮阳区",
+            "team": "桃园英歌队",
+            "times": ["07:00-10:00"],
+            "tags": ["新春演出", "社区演出"],
+            "highlight": true,
+            "culturalMeaning": "新春首日展现传统文化活力"
+        },
+        {
+            "id": "p008",
+            "title": "龙湖区新春英歌舞巡演",
+            "date": "2025-01-29",
+            "location": "龙湖区外砂街道林厝村",
+            "district": "龙湖区",
+            "team": "潮阳凤仪英歌队",
+            "times": ["08:00-12:30"],
+            "tags": ["新春演出", "乡村演出"],
+            "highlight": true,
+            "culturalMeaning": "将传统文化带到乡村"
+        },
+        {
+            "id": "p009",
+            "title": "元宵节英歌舞联合巡演",
+            "date": "2025-02-12",
+            "location": "潮阳区文光塔广场及部分城区主干道",
+            "district": "潮阳区",
+            "team": "潮阳16支英歌队",
+            "times": ["09:00-12:00"],
+            "tags": ["新春演出", "大型联合演出", "城区巡演"],
+            "highlight": true,
+            "description": "16支英歌队联合巡演",
+            "culturalMeaning": "元宵佳节展现潮汕传统文化盛况"
+        },
+        {
+            "id": "p010",
+            "title": "青少年英歌舞传承专场",
+            "date": "2025-02-04",
+            "location": "潮阳区西胪镇泉塘村",
+            "district": "潮阳区",
+            "team": "泉塘村青少年英歌队",
+            "times": ["09:00-17:00"],
+            "tags": ["新春演出", "青少年专场", "乡村演出"],
+            "highlight": true,
+            "culturalMeaning": "培养新一代传统文化传承者"
+        },
+        {
+            "id": "p012",
+            "title": "华新夜间英歌舞专场",
+            "date": "2025-02-05",
+            "location": "濠江区滨海街道华新社区",
+            "district": "濠江区",
+            "team": "华新英歌队",
+            "times": ["19:00-23:00"],
+            "tags": ["新春演出", "夜间专场"],
+            "highlight": true,
+            "culturalMeaning": "夜色中展现英歌舞的独特魅力"
+        },
+        {
+            "id": "p001",
+            "title": "潇湘乡英歌队社区巡演",
+            "date": "2025-01-18",
+            "location": "潮阳区铜盂镇铜钵盂社区、肖渡村",
+            "district": "潮阳区",
+            "team": "潇湘乡英歌队",
+            "times": ["07:00-11:00"],
+            "tags": ["社区巡演"],
+            "highlight": false,
+            "culturalMeaning": "传承潮汕传统文化，展现社区活力"
+        },
+        {
+            "id": "p002",
+            "title": "口美英歌队主题园区英歌舞演出",
+            "date": "2025-01-18",
+            "location": "潮阳区潮汕风文化主题花园",
+            "district": "潮阳区",
+            "team": "口美英歌队",
+            "times": ["14:00-15:30"],
+            "tags": ["主题园区演出"],
+            "highlight": false,
+            "culturalMeaning": "在特色文化场所展现英歌舞艺术魅力"
+        },
+        {
+            "id": "p003",
+            "title": "五和轩与铜钵盂英歌队联合演出",
+            "date": "2025-01-19",
+            "location": "潮南区峡山街道洋内社区",
+            "district": "潮南区",
+            "team": ["五和轩英歌队", "铜钵盂英歌队"],
+            "times": ["08:00-16:00"],
+            "tags": ["联合演出", "社区演出"],
+            "highlight": false,
+            "culturalMeaning": "两支优秀英歌队联袂演出，展示潮南区英歌舞艺术魅力"
+        },
+        {
+            "id": "p013",
+            "title": "潮阳英歌队主题演出",
+            "date": "2025-02-06",
+            "location": "潮阳区潮阳大剧院",
+            "district": "潮阳区",
+            "team": "潮阳英歌队",
+            "times": ["19:30-21:30"],
+            "tags": ["主题演出"],
+            "highlight": false,
+            "culturalMeaning": "展现潮阳英歌队的艺术魅力"
+        },
+        {
+            "id": "p014",
+            "title": "潮南英歌队主题演出",
+            "date": "2025-02-07",
+            "location": "潮南区潮南大剧院",
+            "district": "潮南区",
+            "team": "潮南英歌队",
+            "times": ["19:30-21:30"],
+            "tags": ["主题演出"],
+            "highlight": false,
+            "culturalMeaning": "展现潮南英歌队的艺术魅力"
+        },
+        {
+            "id": "p015",
+            "title": "澄海英歌队主题演出",
+            "date": "2025-02-08",
+            "location": "澄海区澄海大剧院",
+            "district": "澄海区",
+            "team": "澄海英歌队",
+            "times": ["19:30-21:30"],
+            "tags": ["主题演出"],
+            "highlight": false,
+            "culturalMeaning": "展现澄海英歌队的艺术魅力"
+        },
+        {
+            "id": "p016",
+            "title": "泥沟英歌队新春双场演出",
+            "date": "2025-01-30",
+            "location": "龙湖区珠池街道南山社区",
+            "district": "龙湖区",
+            "team": "泥沟英歌队",
+            "times": ["7:00-11:00", "14:30-17:30"],
+            "tags": ["新春演出", "社区演出"],
+            "highlight": true,
+            "culturalMeaning": "正月初二全天候展现英歌舞魅力"
+        },
+        {
+            "id": "p017",
+            "title": "金浦得胜利英歌队社区巡演",
+            "date": "2025-01-30",
+            "location": "金平区舵莲街道莲塘片区",
+            "district": "金平区",
+            "team": "金浦得胜利英歌队",
+            "times": ["08:00-11:30", "13:30-17:00"],
+            "tags": ["新春演出", "社区巡演"],
+            "highlight": true,
+            "culturalMeaning": "深入社区展现传统文化魅力"
+        },
+        {
+            "id": "p018",
+            "title": "西门女子英歌队新春专场",
+            "date": "2025-01-30",
+            "location": "潮阳区文光街道西门社区居委",
+            "district": "潮阳区",
+            "team": "西门女子英歌队",
+            "times": ["09:00-10:00"],
+            "tags": ["新春演出", "社区演出"],
+            "highlight": true,
+            "culturalMeaning": "展现女子英歌队的独特风采"
+        },
+        {
+            "id": "p019",
+            "title": "五和轩铜钵盂新春英歌舞联演",
+            "date": "2025-01-22",
+            "location": "潮南区峡山街道洋内社区",
+            "district": "潮南区",
+            "team": ["五和轩英歌队", "铜钵盂英歌队"],
+            "times": ["08:00-12:00"],
+            "tags": ["联合演出", "社区演出"],
+            "highlight": false,
+            "culturalMeaning": "展现英歌舞艺术的多样魅力"
+        },
+        {
+            "id": "p020",
+            "title": "赤产英歌队庙会专场",
+            "date": "2025-01-23",
+            "location": "潮阳区城南公园赤产天后古庙，潮阳区东山双忠祖庙",
+            "district": "潮阳区",
+            "team": "潮阳赤产英歌队",
+            "times": ["08:00-20:00"],
+            "tags": ["传统庙会"],
+            "highlight": false,
+            "culturalMeaning": "传承庙会文化，展现传统英歌舞"
+        },
+        {
+            "id": "p021",
+            "title": "岭东英歌队社区巡演",
+            "date": "2025-01-23",
+            "location": "潮阳区棉城周厝庵及教授巷口",
+            "district": "潮阳区",
+            "team": "岭东英歌队",
+            "times": ["09:00-14:30"],
+            "tags": ["社区巡演"],
+            "highlight": false,
+            "culturalMeaning": "深入社区传播传统文化"
+        },
+        {
+            "id": "p022",
+            "title": "忠精英歌队联合演出",
+            "date": "2025-01-23",
+            "location": "潮阳区城南公园",
+            "district": "潮阳区",
+            "team": ["城南街道忠精英歌队", "龙井行祠庙忠精英歌队"],
+            "times": ["17:00-18:00"],
+            "tags": ["联合演出"],
+            "highlight": false,
+            "culturalMeaning": "展现不同英歌队的合作魅力"
+        },
+        {
+            "id": "p023",
+            "title": "龙井双树英歌队巡演",
+            "date": "2025-01-23",
+            "location": "潮阳区城南街道辖区",
+            "district": "潮阳区",
+            "team": "湖阳龙井双树英歌队",
+            "times": ["08:00-15:00"],
+            "tags": ["社区巡演"],
+            "highlight": false,
+            "culturalMeaning": "全天候展现英歌舞艺术"
+        },
+        {
+            "id": "p024",
+            "title": "兴德胜英歌队巡演",
+            "date": "2025-01-23",
+            "location": "潮阳区城南街道辖区",
+            "district": "潮阳区",
+            "team": "兴德胜英歌队",
+            "times": ["06:00-17:00"],
+            "tags": ["社区巡演"],
+            "highlight": false,
+            "culturalMeaning": "全天候服务社区文化生活"
+        },
+        {
+            "id": "p025",
+            "title": "桃园英歌队社区演出",
+            "date": "2025-01-24",
+            "location": "潮阳区文光街道桃园社区",
+            "district": "潮阳区",
+            "team": "桃园英歌队",
+            "times": ["07:00-10:00"],
+            "tags": ["社区演出"],
+            "highlight": false,
+            "culturalMeaning": "丰富社区文化生活"
+        },
+        {
+            "id": "p026",
+            "title": "慈济英歌队百寿演出",
+            "date": "2025-01-25",
+            "location": "潮阳区文光街道平东社区百寿",
+            "district": "潮阳区",
+            "team": "慈济英歌队",
+            "times": ["09:00"],
+            "tags": ["社区演出"],
+            "highlight": false,
+            "culturalMeaning": "传统文化进社区"
+        },
+        {
+            "id": "p027",
+            "title": "富美英歌队欢乐世界专场",
+            "date": "2025-01-25",
+            "location": "金平区广东绿梦欢乐世界",
+            "district": "金平区",
+            "team": "富美英歌队",
+            "times": ["11:00-12:00", "16:00-17:00", "20:00-21:00"],
+            "tags": ["主题乐园演出"],
+            "highlight": false,
+            "culturalMeaning": "传统文化与现代娱乐的融合"
+        },
+        {
+            "id": "p028",
+            "title": "口美英歌队主题花园专场",
+            "date": "2025-01-25",
+            "location": "潮阳区潮汕风文化主题花园",
+            "district": "潮阳区",
+            "team": "口美英歌队",
+            "times": ["14:00-15:30"],
+            "tags": ["主题园区演出"],
+            "highlight": false,
+            "culturalMeaning": "在特色文化场所展现传统魅力"
+        },
+        {
+            "id": "p029",
+            "title": "富美英歌队欢乐世界演出",
+            "date": "2025-01-26",
+            "location": "金平区广东绿梦欢乐世界",
+            "district": "金平区",
+            "team": "富美英歌队",
+            "times": ["11:00-12:00", "16:00-17:00", "20:00-21:00"],
+            "tags": ["主题乐园演出"],
+            "highlight": false,
+            "culturalMeaning": "让游客体验传统文化魅力"
+        },
+        {
+            "id": "p030",
+            "title": "埭头英歌队社区演出",
+            "date": "2025-01-27",
+            "location": "濠江区广澳街道埭头社区",
+            "district": "濠江区",
+            "team": "埭头英歌队",
+            "times": ["07:30-09:30"],
+            "tags": ["社区演出"],
+            "highlight": false,
+            "culturalMeaning": "社区传统文化传承"
+        },
+        {
+            "id": "p031",
+            "title": "富美英歌队欢乐世界演出",
+            "date": "2025-01-27",
+            "location": "金平区广东绿梦欢乐世界",
+            "district": "金平区",
+            "team": "富美英歌队",
+            "times": ["11:00-12:00", "16:00-17:00", "20:10-21:00"],
+            "tags": ["主题乐园演出"],
+            "highlight": false,
+            "culturalMeaning": "传统与现代的完美融合"
+        }
+    ]
+}

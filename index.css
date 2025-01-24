@@ -1,0 +1,331 @@
+:root{
+    --primary-color: rgb(42, 183, 230);
+    --secondary-color: rgb(144, 192, 243);
+    --split-color: rgba(19, 64, 241, 0.05);
+    --text-color: rgb(0, 0, 0);
+    --sub-color: rgba(0, 0, 0, 0.3);
+    --tag-color: rgba(42, 183, 230, 0.1);
+    --card-color: rgb(245, 245, 245);
+    --bg-color: rgb(255, 255, 255);
+    --nav-color: rgba(255, 255, 255, 0.7);
+    --withe-color: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --primary-color: rgb(46, 192, 255);
+        --secondary-color: rgb(167, 190, 247);
+        --split-color: rgba(255, 255, 255, 0.1);
+        --text-color: rgb(255, 255, 255);
+        --sub-color: rgba(255, 255, 255, 0.5);
+        --card-color: rgb(45, 41, 161);
+        --bg-color: rgb(13, 27, 113);
+        --nav-color: rgba(13, 27, 113, 0.7); 
+    }
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+    backdrop-filter: blur(12px);
+    box-sizing: border-box;
+    padding: 12px 32px;
+    color: var(--text-color);
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    height: 30px;
+    font-weight: bold;
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-weight: 500;
+}
+
+.navlink {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 40px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navlink:hover {
+    color: var(--withe-color);
+    background-color: var(--primary-color);
+}
+
+.brand{
+    margin-top: 80px;
+    font-size: 100px;
+    font-weight: bold;
+    span{
+        color: var(--primary-color);
+    }
+}
+
+.conter {
+    max-width: 1480px;
+    margin: 40px 2vw;
+    column-count: 4;
+    column-gap: 24px;
+}
+@media (max-width: 1600px) {
+    .conter {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 1200px) {
+    .conter {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .conter {
+        column-count: 1;
+    }
+}
+
+.card {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    background: linear-gradient(-135deg, #FFFFFF 0%, #f7f7f7 100%);
+    color: var(--text-color);
+    border-radius: 12px; 
+    outline: 0px solid var(--split-color);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.card:hover {
+    outline: 4px solid var(--split-color);
+    transform: translateY(-4px);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin: 8px 0;
+}
+.Detail{
+    font-size: 14px;
+    line-height: 28px;
+    color: var(--text-color);
+    margin: 4px 0;
+    strong{
+        font-size: 14px;
+        color: var(--sub-color);
+        margin-right: 8px;
+    }
+    .time{
+        margin-left: 12px;
+    }
+}
+
+.split {
+    height: 1px;
+    border-radius: 2px;
+    background-color: var(--split-color);
+    margin: 12px 0 16px; 
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--tag-color);
+    color: var(--primary-color);
+    border-radius: 40px;
+    padding: 4px 12px;
+    margin: 8px 8px 8px 0px;
+    font-size: 14px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin: 24px 4vw 0px;
+    padding: 24px;
+}
+.filters label {
+    margin-right: 10px;
+}
+
+.filters select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 150px; 
+}
+.filters .tinytit{
+    color: var(--text-color);
+    margin-right: 12px;
+    font-weight: 500;
+}
+
+
+
+.gomap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+}
+
+.navigate-btn {
+    padding: 4px 8px;
+    background: linear-gradient(-135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--withe-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    transition: all 0.3s;
+}
+
+.navigate-btn:hover {
+    padding: 8px 16px;
+}
+
+.footer {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-size: 40px;
+        margin-bottom: 0px;
+    }
+    p{
+        font-size: 12px;
+        opacity: 0.5;
+    }
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid var(--split-color);
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    float: right;
+    font-size: 28px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--sub-color);
+    text-decoration: none;
+    cursor: pointer;
+    transform: rotateZ(45deg);
+}
+
+.navigate-options button {
+    background-color: var(--primary-color);
+    color: var(--withe-color);
+    border: none;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        background-color: var(--secondary-color);
+    }
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: var(--primary-color);
+    color: var(--withe-color);
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1001;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 0;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
