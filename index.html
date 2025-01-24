@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+<<<<<<< Updated upstream
     <meta charset="utf-8">
     <title>潮汕英歌魂</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>潮汕文化导览</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+>>>>>>> Stashed changes
 </head>
 <body>
     <nav class="navbar">
@@ -49,10 +57,62 @@
     <div class="conter">
         <div id="activity-container"></div>
     </div>
+<<<<<<< Updated upstream
     <footer class="footer">
         <h1>🏖️</h1>
         <p>版权所有 © 2025</p>  
     </footer >
     <script src="index.js"></script>
+=======
+
+    <!-- 日历预览弹窗 -->
+    <div class="calendar-preview-backdrop" id="calendarPreviewBackdrop"></div>
+    <div class="calendar-preview" id="calendarPreview">
+        <div class="calendar-preview-header">
+            <div class="calendar-preview-title">添加到日历</div>
+            <button class="calendar-preview-close" onclick="hideCalendarPreview()">&times;</button>
+        </div>
+        <div class="calendar-preview-content">
+            <div class="calendar-preview-info">
+                <div class="calendar-preview-info-item">
+                    <div class="calendar-preview-info-label">活动</div>
+                    <div class="calendar-preview-info-value" id="previewTitle"></div>
+                </div>
+                <div class="calendar-preview-info-item">
+                    <div class="calendar-preview-info-label">时间</div>
+                    <div class="calendar-preview-info-value" id="previewTime"></div>
+                </div>
+                <div class="calendar-preview-info-item">
+                    <div class="calendar-preview-info-label">地点</div>
+                    <div class="calendar-preview-info-value" id="previewLocation"></div>
+                </div>
+                <div class="calendar-preview-info-item">
+                    <div class="calendar-preview-info-label">演出团队</div>
+                    <div class="calendar-preview-info-value" id="previewTeam"></div>
+                </div>
+            </div>
+            <div class="calendar-preview-actions">
+                <button class="calendar-preview-action-btn" onclick="addToAppleCalendar()">
+                    <i class="fas fa-calendar-alt"></i>
+                    添加到Apple日历
+                </button>
+                <button class="calendar-preview-action-btn" onclick="addToGoogleCalendar()">
+                    <i class="fab fa-google"></i>
+                    添加到Google日历
+                </button>
+                <button class="calendar-preview-action-btn" onclick="downloadICSFile()">
+                    <i class="fas fa-download"></i>
+                    下载日历文件(ICS)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载数据和功能脚本 -->
+    <script src="data/activities.js"></script>
+    <script src="js/app.js"></script>
+    <!-- 添加marked.js用于markdown渲染 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+>>>>>>> Stashed changes
 </body>
 </html>
